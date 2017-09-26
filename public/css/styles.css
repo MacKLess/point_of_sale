@@ -22,9 +22,31 @@ li {
   font-size: 20px;
 }
 
+a {
+  color: #ca6f5f;
+}
+
+a:hover {
+  color: #884c41;
+}
+
 .container {
   height: 100vh;
   background-color: rgba(221, 221, 221, 0.83)
+}
+
+.home-link {
+  text-align: center;
+  margin: 1.5em 0em;
+}
+
+.index-container {
+  text-align: center;
+}
+
+.welcome {
+  font-style: italic;
+  color: #861c1c;
 }
 
 #index-pic {
