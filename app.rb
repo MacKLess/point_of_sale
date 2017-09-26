@@ -22,6 +22,28 @@ post('/manager') do
   redirect '/manager'
 end
 
+get('/product/:id') do
+  @product = Product.find(params[:id].to_i)
+  erb(:product)
+end
+
+get('/product/:id/edit') do
+  @product = Product.find(params[:id].to_i)
+  erb(:product_edit)
+end
+
+patch('/product/:id/edit') do
+  @product = Product.find(params[:id].to_i)
+  @product.update({description: params['description'], price: params['price'].to_f})
+  redirect "/product/#{@product.id}"
+end
+
+delete('/product/:id/delete') do
+  @product = Product.find(params[:id].to_i)
+  @product.destroy
+  redirect "/manager"
+end
+
 get('/cashier') do
   @products = Product.all
   erb(:cashier)

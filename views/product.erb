@@ -1,0 +1,8 @@
+<h1><%= @product.description %></h1>
+<h2>$<%= @product.price %></h2>
+<% if @product.purchase_id %>
+  <h2>Purchased</h2>
+<% else %>
+  <h2>In Stock</h2>
+<% end %>
+<p><a href="/product/<%= @product.id %>/edit">Edit Product</a></p>
