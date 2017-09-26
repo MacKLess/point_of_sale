@@ -1,0 +1,37 @@
+body {
+  background-image: url("../img/bg.jpg");
+  background-size: auto 100vh;
+  background-repeat: no-repeat;
+  font-family: 'Kreon', serif;
+}
+
+h1 {
+  text-align: center;
+  font-family: 'Special Elite', serif;
+}
+
+h2, h3 {
+  font-family: 'Special Elite', serif;
+}
+
+p {
+  font-size: 20px;
+}
+
+li {
+  font-size: 20px;
+}
+
+.container {
+  height: 100vh;
+  background-color: rgba(221, 221, 221, 0.83)
+}
+
+#index-pic {
+  width: 100%;
+}
+
+/*font-family: 'Kreon', serif;
+font-family: 'Sorts Mill Goudy', serif;
+font-family: 'Special Elite', cursive;
+font-family: 'Love Ya Like A Sister', cursive;*/
