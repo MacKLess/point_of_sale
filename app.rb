@@ -45,7 +45,7 @@ delete('/product/:id/delete') do
 end
 
 get('/cashier') do
-  @products = Product.all
+  @products = Product.available
   erb(:cashier)
 end
 
@@ -65,7 +65,7 @@ end
 
 get('/purchase/:id/edit') do
   @purchase = Purchase.find(params[:id].to_i)
-  @products = Product.all
+  @products = @purchase.products + Product.available
   erb(:purchase_edit)
 end
 

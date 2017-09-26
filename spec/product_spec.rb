@@ -15,4 +15,13 @@ describe('Product') do
       expect(test_product.purchase).to eq(test_purchase)
     end
   end
+
+  describe('.available') do
+    it "returns all products not assigned to an order" do
+      test_purchase = Purchase.create({customer: "Edward Gorey", date: "2017-09-26"})
+      test_product_1 = Product.create({description: "Fainting couch", price: 2000.00, purchase_id: test_purchase.id})
+      test_product_2 = Product.create({description: "Fainting chair", price: 1200.00})
+      expect(Product.available).to eq([test_product_2])
+    end
+  end
 end

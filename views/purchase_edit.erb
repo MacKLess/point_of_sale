@@ -3,7 +3,7 @@
   <input type="hidden" name="_method" value="patch">
   <div class="form-group">
     <label for="customer">Customer Name:</label>
-    <input type="text" name="customer" class="form-control" value="<%=@purchase.customer %>">
+    <input type="text" name="customer" class="form-control" value="<%= @purchase.customer %>">
   </div>
   <h5>Available Stock</h5>
   <% @products.each do |product| %>
