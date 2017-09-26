@@ -6,4 +6,8 @@ class Product < ActiveRecord::Base
   scope(:available, -> do
     where({:purchase_id => nil})
   end)
+
+  scope(:unavailable, -> do
+    where.not({:purchase_id => nil})
+  end)
 end
