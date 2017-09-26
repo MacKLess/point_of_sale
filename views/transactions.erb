@@ -1,0 +1,11 @@
+<h1>Record of Sale</h1>
+
+<% if @purchases.any? %>
+<ul>
+<% @purchases.each do |purchase| %>
+  <li><a href="/purchases/<%= purchase.id %>"><%= purchase.date %> : <%= purchase.customer %></a></li>
+  <% end %>
+</ul>
+<% else %>
+  <p>We haven't had any customers yet. What are you doing with all your time?! Sell, man! Sell! For the love of god!</p>
+<% end %>

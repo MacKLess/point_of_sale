@@ -87,3 +87,8 @@ delete('/purchase/:id/delete') do
   @purchase.destroy
   redirect '/cashier'
 end
+
+get('/transactions') do
+  @purchases = Purchase.all
+  erb(:transactions)
+end
