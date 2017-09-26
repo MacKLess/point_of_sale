@@ -92,3 +92,8 @@ get('/transactions') do
   @purchases = Purchase.all
   erb(:transactions)
 end
+
+get('/transactions/:id') do
+  @purchase = Purchase.find(params[:id].to_i)
+  erb(:transaction_detail)
+end

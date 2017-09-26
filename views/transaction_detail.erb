@@ -1,0 +1,16 @@
+<h1>Record of Sale</h1>
+<h2>Date of Purchase: <%= @purchase.date %></h2>
+<h2>Customer Name: <%= @purchase.customer %></h2>
+<% if @purchase.products.any? %>
+  <h2>Items Selected</h2>
+  <ul>
+    <% @purchase.products.each do |product| %>
+      <li><%= product.description %> - $<%= product.price %></li>
+    <% end %>
+  </ul>
+  <h2>Order Total: $<%= @purchase.total_cost %></h2>
+<% else %>
+  <p>This order has no products! How did this happen?</p>
+<% end %>
+
+<p><a href="/transactions">Back to Transactions Page</a></p>

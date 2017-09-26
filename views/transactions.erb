@@ -3,7 +3,7 @@
 <% if @purchases.any? %>
 <ul>
 <% @purchases.each do |purchase| %>
-  <li><a href="/purchases/<%= purchase.id %>"><%= purchase.date %> : <%= purchase.customer %></a></li>
+  <li><a href="/transactions/<%= purchase.id %>"><%= purchase.date %> : <%= purchase.customer %></a></li>
   <% end %>
 </ul>
 <% else %>
