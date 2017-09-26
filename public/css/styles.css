@@ -102,6 +102,14 @@ form.delete {
   width: auto;
 }
 
+.edit-link {
+  text-align: center;
+}
+
+.product-delete {
+  text-align: center;
+}
+
 #index-pic {
   width: 100%;
 }

@@ -15,7 +15,8 @@
 </form>
 
 <h3>Delete Item</h3>
-<form action="/product/<%= @product.id %>/delete" method="post">
+<form class="product-delete" action="/product/<%= @product.id %>/delete" method="post">
+  <p>This item will be gone forever. Are you sure you want to continue?</p>
   <input type="hidden" name="_method" value="delete">
   <button type="submit" class="btn">Delete</button>
 </form>
