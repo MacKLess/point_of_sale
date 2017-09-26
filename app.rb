@@ -50,5 +50,38 @@ get('/cashier') do
 end
 
 post('/cashier') do
-  erb(:cashier)
+  if params['product_ids']
+    product_ids = params['product_ids'].map { |id| id.to_i }
+  else
+    product_ids = nil
+  end
+  @purchase = Purchase.create({
+    customer: params['customer'],
+    product_ids: product_ids,
+    date: Date.today
+  })
+  erb(:purchase_slip)
+end
+
+get('/purchase/:id/edit') do
+  @purchase = Purchase.find(params[:id].to_i)
+  @products = Product.all
+  erb(:purchase_edit)
+end
+
+patch('/purchase/:id/edit') do
+  @purchase = Purchase.find(params[:id].to_i)
+  if params['product_ids']
+    product_ids = params['product_ids'].map { |id| id.to_i }
+  else
+    product_ids = nil
+  end
+  @purchase.update({customer: params['customer'], product_ids: product_ids})
+  erb(:purchase_slip)
+end
+
+delete('/purchase/:id/delete') do
+  @purchase = Purchase.find(params[:id].to_i)
+  @purchase.destroy
+  redirect '/cashier'
 end

@@ -1,0 +1,18 @@
+<h2>Revise an Order</h2>
+<form action="/purchase/<%= @purchase.id %>/edit" method="post">
+  <input type="hidden" name="_method" value="patch">
+  <div class="form-group">
+    <label for="customer">Customer Name:</label>
+    <input type="text" name="customer" class="form-control" value="<%=@purchase.customer %>">
+  </div>
+  <h5>Available Stock</h5>
+  <% @products.each do |product| %>
+    <div class="checkbox">
+      <label>
+        <input type="checkbox" name="product_ids[]" value="<%= product.id %>" <%= (@purchase.id == product.purchase_id) ? "checked" : "" %>>
+        <%= product.description %> - $<%= product.price %>
+      </label>
+    </div>
+  <% end %>
+  <button type="submit" class="btn">Update Order</button>
+</form>

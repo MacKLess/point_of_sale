@@ -1,0 +1,19 @@
+<h1><%= @purchase.customer %>'s Order</h1>
+
+<% if @purchase.products.any? %>
+  <h2>Items Selected</h2>
+  <ul>
+    <% @purchase.products.each do |product| %>
+      <li><%= product.description %> - $<%= product.price %></li>
+    <% end %>
+  </ul>
+  <h2>Order Total: $<%= @purchase.total_cost %></h2>
+  <a href="/cashier"><button type="button" class='btn'>Complete Purchase</button></a>
+<% else %>
+  <p>This order is woefully underfilled! Please request that the customer actually choose an item before attempting a purchase.</p>
+<% end %>
+<a href="/purchase/<%= @purchase.id %>/edit"><button type="button" class="btn">Revise Order</button></a>
+<form action="/purchase/<%= @purchase.id %>/delete" method="post">
+  <input type="hidden" name="_method" value="delete">
+  <button type="submit" class="btn">Cancel Order</button>
+</form>

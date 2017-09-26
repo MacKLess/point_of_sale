@@ -1,0 +1,24 @@
+<h1>Welcome Loyal Cashier!</h1>
+
+<h2>Assist a Noble Customer:</h2>
+
+<% if @products.any? %>
+  <form action="/cashier" method="post">
+    <div class="form-group">
+      <label for="customer">Customer Name:</label>
+      <input type="text" name="customer" class="form-control">
+    </div>
+    <h5>Available Stock</h5>
+    <% @products.each do |product| %>
+      <div class="checkbox">
+        <label>
+          <input type="checkbox" name="product_ids[]" value="<%= product.id %>">
+          <%= product.description %> - $<%= product.price %>
+        </label>
+      </div>
+    <% end %>
+    <button type="submit" class="btn">Review Order</button>
+  </form>
+<% else %>
+  <p>Unfortunately, we have nothing to sell today.</p>
+<% end %>
