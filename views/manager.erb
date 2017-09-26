@@ -1,15 +1,27 @@
 <h1>Welcome, Manager</h1>
 
-Here is the list of the current inventory. Peruse at your pleasure!
+<p>Here is the list of the current inventory. Peruse at your pleasure!</p>
 
-<% if @products.any? %>
+<% if @available_products.any? %>
 <ul>
-  <% @products.each do |product| %>
+  <% @available_products.each do |product| %>
   <li><a href="/product/<%= product.id %>"><%= product.description %></a></li>
   <% end %>
 </ul>
 <% else %>
 <p>There are no products! We need some inventory, good sir! What kind of establishment is this?!!!</p>
+<% end %>
+
+<p>Here is the list of inventory that is sold out. Please restock!</p>
+
+<% if @unavailable_products.any? %>
+<ul>
+  <% @unavailable_products.each do |product| %>
+  <li><a href="/product/<%= product.id %>"><%= product.description %></a></li>
+  <% end %>
+</ul>
+<% else %>
+  <p>We haven't sold anything, man! How are we keeping the wolves from the door?!</p>
 <% end %>
 
 <h3>Add Inventory</h3>

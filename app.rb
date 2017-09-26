@@ -13,6 +13,8 @@ end
 
 get('/manager') do
   @products = Product.all
+  @available_products = Product.available
+  @unavailable_products = Product.unavailable
   erb(:manager)
 end
 
