@@ -17,6 +17,7 @@ h2, h3 {
 
 p, h5 {
   font-size: 20px;
+  text-align: center;
 }
 
 ul {
@@ -45,6 +46,17 @@ form {
 
 label {
   font-size: 16px;
+}
+
+img {
+  width: 100%;
+}
+
+.delete-pic {
+  width: 80%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 3rem;
 }
 
 .container {
@@ -102,16 +114,24 @@ form.delete {
   width: auto;
 }
 
-.edit-link {
-  text-align: center;
-}
-
 .product-delete {
   text-align: center;
 }
 
 #index-pic {
   width: 100%;
+}
+
+.transac-pic {
+  width: 400px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.yawfle-pic {
+  width: 500px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 /*font-family: 'Kreon', serif;

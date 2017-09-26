@@ -15,6 +15,10 @@
 </form>
 
 <h3>Delete Item</h3>
+<div class="delete-pic">
+  <img src="/img/cobbles.jpg" alt="blonde child falling into hole in cobblestone street">
+</div>
+
 <form class="product-delete" action="/product/<%= @product.id %>/delete" method="post">
   <p>This item will be gone forever. Are you sure you want to continue?</p>
   <input type="hidden" name="_method" value="delete">
