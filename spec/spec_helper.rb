@@ -6,7 +6,7 @@ require "sinatra/activerecord"
 require "product"
 require "purchase"
 
-RSpec configure do |config|
+RSpec.configure do |config|
   config.after(:each) do
     Product.all.each do |product|
       product.destroy
