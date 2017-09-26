@@ -23,11 +23,11 @@ li {
 }
 
 a {
-  color: #ca6f5f;
+  color: #884c41;
 }
 
 a:hover {
-  color: #884c41;
+  color: #ca6f5f;
 }
 
 .container {
@@ -46,7 +46,34 @@ a:hover {
 
 .welcome {
   font-style: italic;
-  color: #861c1c;
+  color: #695c5c;
+}
+
+.btn {
+  color: black;
+  border: 1px solid rgb(171, 159, 145);
+  border-radius: 20px;
+  font-size: 16px;
+  background-color: #d0c0ac;
+}
+
+.btn:hover {
+  background-color: #b9ab9a;
+  border-color: rgb(134, 124, 114);
+}
+
+.manager-options {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.manager-options .btn {
+  margin: .5em;
+}
+
+.btn.selected {
+  background-color: #b9ab9a;
+  border-color: rgb(134, 124, 114);
 }
 
 #index-pic {

@@ -25,3 +25,8 @@
 <% if @sales_total %>
   <h3>Total Sales: $<%= @sales_total %></h3>
 <% end %>
+
+<div class="manager-options">
+  <a href="/manager"><button type="button" class="btn">Inventory</button></a>
+  <a href="/transactions"><button type="button" class="btn selected">Check transactions</button></a>
+</div>

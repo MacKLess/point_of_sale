@@ -1,7 +1,5 @@
 <h1>Welcome, Manager</h1>
 
-<a href="/transactions"><button type="button" class="btn">Check transactions</button></a>
-
 <p>Here is the list of the current inventory. Peruse at your pleasure!</p>
 
 <% if @available_products.any? %>
@@ -39,3 +37,8 @@
   </div>
   <button type="submit" class="btn">Add!</button>
 </form>
+
+<div class="manager-options">
+  <a href="/manager"><button type="button" class="btn selected">Inventory</button></a>
+  <a href="/transactions"><button type="button" class="btn">Check transactions</button></a>
+</div>
