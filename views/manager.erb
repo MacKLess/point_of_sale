@@ -1,0 +1,27 @@
+<h1>Welcome, Manager</h1>
+
+Here is the list of the current inventory. Peruse at your pleasure!
+
+<% if @products.any? %>
+<ul>
+  <% @products.each do |product| %>
+  <li><a href="/product/<%= product.id %>"><%= product.description %></a></li>
+  <% end %>
+</ul>
+<% else %>
+<p>There are no products! We need some inventory, good sir! What kind of establishment is this?!!!</p>
+<% end %>
+
+<h3>Add Inventory</h3>
+
+<form action="/manager" method="post">
+  <div class="form-group">
+    <label for="description">Item Description:</label>
+    <input name="description" type="text" class="form-control">
+  </div>
+  <div class="form-group">
+    <label for="price">Cost of Item:</label>
+    <input name="price" type="number" step="0.01" min="0.00" class="form-control">
+  </div>
+  <button type="submit" class="btn">Add!</button>
+</form>
