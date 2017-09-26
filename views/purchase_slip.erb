@@ -8,12 +8,14 @@
     <% end %>
   </ul>
   <h2>Order Total: $<%= @purchase.total_cost %></h2>
-  <a href="/cashier"><button type="button" class='btn'>Complete Purchase</button></a>
-<% else %>
-  <p>This order is woefully underfilled! Please request that the customer actually choose an item before attempting a purchase.</p>
-<% end %>
-<a href="/purchase/<%= @purchase.id %>/edit"><button type="button" class="btn">Revise Order</button></a>
-<form action="/purchase/<%= @purchase.id %>/delete" method="post">
-  <input type="hidden" name="_method" value="delete">
-  <button type="submit" class="btn">Cancel Order</button>
-</form>
+  <div class="order-buttons">
+    <a href="/cashier"><button type="button" class='btn'>Complete Purchase</button></a>
+  <% else %>
+    <p>This order is woefully underfilled! Please request that the customer actually choose an item before attempting a purchase.</p>
+  <% end %>
+    <a href="/purchase/<%= @purchase.id %>/edit"><button type="button" class="btn">Revise Order</button></a>
+    <form class="delete" action="/purchase/<%= @purchase.id %>/delete" method="post">
+      <input type="hidden" name="_method" value="delete">
+      <button type="submit" class="btn">Cancel Order</button>
+    </form>
+  </div>

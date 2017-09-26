@@ -85,6 +85,7 @@ end
 delete('/purchase/:id/delete') do
   @purchase = Purchase.find(params[:id].to_i)
   @purchase.destroy
+  binding.pry
   redirect '/cashier'
 end
 
