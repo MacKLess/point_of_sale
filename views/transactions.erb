@@ -9,3 +9,19 @@
 <% else %>
   <p>We haven't had any customers yet. What are you doing with all your time?! Sell, man! Sell! For the love of god!</p>
 <% end %>
+
+<h2>View sales for a date range</h2>
+<form action="/transactions" method="post">
+  <div class="form-group">
+    <label for="start-date">Start Date:</label>
+    <input type="date" name="start-date" class="form-control">
+  </div>
+  <div class="form-group">
+    <label for="end-date">End Date:</label>
+    <input type="date" name="end-date" class="form-control">
+  </div>
+  <button type="submit" class="btn">Get Total</button>
+</form>
+<% if @sales_total %>
+  <h3>Total Sales: $<%= @sales_total %></h3>
+<% end %>

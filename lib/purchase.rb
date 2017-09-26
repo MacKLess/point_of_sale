@@ -10,4 +10,14 @@ class Purchase < ActiveRecord::Base
     end
     total
   end
+
+  def self.sales_total(start_date, end_date)
+    total = 0
+    self.all.each do |purchase|
+      if (purchase.date >= start_date) & (purchase.date <= end_date)
+        total += purchase.total_cost
+      end
+    end
+    total
+  end
 end

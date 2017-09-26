@@ -93,6 +93,14 @@ get('/transactions') do
   erb(:transactions)
 end
 
+post('/transactions') do
+  @purchases = Purchase.all
+  start_date = Date.parse(params["start-date"])
+  end_date = Date.parse(params["end-date"])
+  @sales_total = Purchase.sales_total(start_date, end_date)
+  erb(:transactions)
+end
+
 get('/transactions/:id') do
   @purchase = Purchase.find(params[:id].to_i)
   erb(:transaction_detail)
